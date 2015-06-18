@@ -50,7 +50,11 @@
       },
       cards: {
         type: Array
-      }
+      },
+      observers: ['outputChanged(cards.*)'],
+      outputChanged: function(cards) {
+        this.output = this.cards;
+      },
     }
   });
 </script>
