@@ -52,9 +52,9 @@
         type: Array
       }
     },
-    observers: ['outputChanged(cards)'],
+    observers: ['outputChanged(cards.*)'],
     outputChanged: function(cards) {
-      this.output = cards;
+      this.output = this.cards;
     }
   });
 </script>
