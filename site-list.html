@@ -54,8 +54,7 @@
     },
     ready: function() {
       setTimeout(function() {       
-        var app2 = document.querySelectorAll('html /deep/ site-list')[0];
-        app2.$.cards.render();
+        document.querySelectorAll('html /deep/ site-list')[0].$.cards.render();
       },3000)
     }
   });
