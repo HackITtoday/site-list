@@ -56,8 +56,7 @@
         setTimeout(function() {       
           var app = document.querySelectorAll('html /deep/ paper-filter')[0];
           console.log("loading", app);
-          var x = app.setFilter();
-          app.data = objectToArray(flattenObject(x.obj, x.path, app.data));
+          app.setFilter();
         },500)
       }
     }
