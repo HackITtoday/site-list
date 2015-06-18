@@ -45,19 +45,19 @@
  Polymer({
    is: 'site-list',    
     properties: {
-      output: {
-        type: Array, value:[]
-      },
-      cards: {
-        type: Array
-      }
+//      output: {
+//        type: Array
+//      },
+//      cards: {
+//        type: Array
+//      }
     },
     ready: function() {
       setTimeout(function() {       
         var app = document.querySelectorAll('html /deep/ paper-filter')[0];
-        console.log("loading", app);
+        console.log("loading", app.output);
         var app2 = document.querySelectorAll('html /deep/ site-list')[0];
-        console.log("loading2", app2);
+        console.log("loading2", app2.output);
         app2.output = app.output;
       },3000)
     }
