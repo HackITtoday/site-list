@@ -47,8 +47,10 @@
    is: 'site-list',    
     properties: {
       output: {
-        type: Array,
-        notify: true
+        type: Array
+      },
+      data: {
+        type: Array
       }
     },
     observers: ['outputChanged(data.*)'],
