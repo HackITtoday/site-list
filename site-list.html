@@ -54,7 +54,7 @@
     },
     observers: ['outputChanged(cards.*)'],
     outputChanged: function(cards) {
-      this.output = this.cards;
+      this.set('output', this.cards);
     }
   });
 </script>
