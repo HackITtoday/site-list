@@ -51,9 +51,9 @@
         notify: true
       }
     },
-    observers: ['outputChanged(output.*)'],
-    outputChanged: function(output) {
-      this.output = this.output;
+    observers: ['outputChanged(data.*)'],
+    outputChanged: function(data) {
+      this.output = this.data;
     }
   });
 </script>
