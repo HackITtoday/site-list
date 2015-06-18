@@ -29,7 +29,7 @@
     <firebase-collection location="https://hi9.firebaseio.com/cards/data/card" data="{{cards}}">
     </firebase-collection>
     <paper-filter by="type" data="{{cards}}" output="{{output}}" max="1" ></paper-filter>
-    <template is="dom-repeat" items="{{output}}" as="card">
+    <template is="dom-repeat" items="{{output}}" as="card" observe="output">
       <a href="{{card.url}}" title="{{card.value}}" >
         <paper-material>
           <div class="body1" style="float: left;width:250px">
