@@ -47,13 +47,14 @@
    is: 'site-list',    
     properties: {
       output: {
-        type: Array
+        type: Array,
+        notify: true
       }
     },
     observers: ['outputChanged(output.*)'],
     outputChanged: function(output) {
-    this.output = this.output;
-  }
-});
+      this.output = this.output;
+    }
+  });
 </script>
 </dom-module>
