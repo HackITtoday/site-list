@@ -35,7 +35,6 @@
           <div class="body1" style="float: left;width:250px">
             <h3>{{card.value}}</h3>
             <span>{{card.title}}</span>
-            <span>more infomation</span>
           </div>
           <iron-image sizing="cover" src="{{card.image}}" style="float: right;width:100px; height:100px;"></iron-image>
         </paper-material>
@@ -49,13 +48,13 @@
       output: {
         type: Array
       },
-      data: {
+      cards: {
         type: Array
       }
     },
-    observers: ['outputChanged(data.*)'],
+    observers: ['outputChanged(cards.*)'],
     outputChanged: function(data) {
-      this.output = this.data;
+      this.output = this.cards;
     }
   });
 </script>
