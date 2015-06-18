@@ -51,8 +51,7 @@
       cards: {
         type: Array
       },
-      observers: ['outputChanged(cards.*)'],
-      outputChanged: function(cards) {
+      ready: function() {
         setTimeout(function() {       
           var app = document.querySelectorAll('html /deep/ paper-filter')[0];
           console.log("loading", app);
