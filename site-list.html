@@ -53,7 +53,13 @@
       },
       observers: ['outputChanged(cards.*)'],
       outputChanged: function(cards) {
-        this.output = this.cards;
+        setTimeout(function() {       
+          var app = document.querySelectorAll('html /deep/ paper-filter')[0];
+          console.log("loading", app);
+          var x = app.setFilter();
+          app.data = objectToArray(flattenObject(x.obj, x.path, app.data));
+        },500)
+        };
       },
     }
   });
