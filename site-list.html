@@ -50,14 +50,14 @@
       },
       cards: {
         type: Array
-      },
-      ready: function() {
-        setTimeout(function() {       
-          var app = document.querySelectorAll('html /deep/ paper-filter')[0];
-          console.log("loading", app);
-          app.setFilter();
-        },500)
       }
+    },
+    ready: function() {
+      setTimeout(function() {       
+        var app = document.querySelectorAll('html /deep/ paper-filter')[0];
+        console.log("loading", app);
+        app.setFilter();
+      },500)
     }
   });
 </script>
