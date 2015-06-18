@@ -44,7 +44,11 @@
   </template>
 <script type="text/javascript">
    Polymer({
-     is: 'site-list',
+     is: 'site-list',    
+     observers: ['outputChanged(output)'],
+     outputChanged: function(output) {
+       this.output = this.output;
+     }
    });
 </script>
 </dom-module>
