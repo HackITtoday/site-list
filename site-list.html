@@ -45,7 +45,7 @@
 <script type="text/javascript">
    Polymer({
      is: 'site-list',    
-     observers: ['outputChanged(output)'],
+     observers: ['outputChanged(output.*)'],
      outputChanged: function(output) {
        this.output = this.output;
      }
