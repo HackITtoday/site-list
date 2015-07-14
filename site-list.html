@@ -31,8 +31,8 @@
     <firebase-collection location="https://hi9site.firebaseio.com/cards/data/card" data="{{cards}}">
     </firebase-collection>
     <paper-filter by="type" data="[[cards]]" output="{{output}}" max="1" ></paper-filter>
-    <iron-list style="height:600px" items="[[output]]" id="cards">
-      <template>
+    <!-- <iron-list style="height:600px" items="[[output]]" id="cards"> -->
+      <template is="dom-repeat" items="[[output]]" id="cards">
         <a href="[[item.url]]" title="[[item.value]]" >
           <paper-material>
             <div class="body1" style="float: left;width:250px">
@@ -43,7 +43,7 @@
           </paper-material>
         </a>
       </template>
-    </iron-list>
+    <!-- </iron-list> -->
   </template>
 <script type="text/javascript">
  Polymer({
@@ -98,7 +98,7 @@
     },
     ready: function() {
       setInterval(function() {       
-        document.querySelectorAll('html site-list')[0].$.cards._refresh();
+        document.querySelectorAll('html site-list')[0].$.cards.render();
       },1000)
     }
   });
