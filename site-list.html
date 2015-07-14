@@ -2,6 +2,7 @@
 <link rel="import" href="../paper-filter/paper-filter.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../firebase-element/firebase-collection.html">
+<link rel="import" href="../iron-elements/iron-list.html">
 
 <dom-module id="site-list">
   <style>
@@ -30,17 +31,19 @@
     <firebase-collection location="https://hi9site.firebaseio.com/cards/data/card" data="{{cards}}">
     </firebase-collection>
     <paper-filter by="type" data="{{cards}}" output="{{output}}" max="1" ></paper-filter>
-    <template is="dom-repeat" items="{{output}}" as="card" observe="cards" id="cards">
-      <a href="{{card.url}}" title="{{card.value}}" >
-        <paper-material>
-          <div class="body1" style="float: left;width:250px">
-            <h3>{{card.value}}</h3>
-            <span>{{card.title}}</span>
-          </div>
-          <iron-image sizing="cover" src="{{card.image}}" style="float: right;width:100px; height:100px;"></iron-image>
-        </paper-material>
-      </a>
-    </template>
+    <iron-list items="{{output}}" as="card" id="cards">
+      <template>
+        <a href="{{card.url}}" title="{{card.value}}" >
+          <paper-material>
+            <div class="body1" style="float: left;width:250px">
+              <h3>{{card.value}}</h3>
+              <span>{{card.title}}</span>
+            </div>
+            <iron-image sizing="cover" src="{{card.image}}" style="float: right;width:100px; height:100px;"></iron-image>
+          </paper-material>
+        </a>
+      </template>
+    </iron-list>
   </template>
 <script type="text/javascript">
  Polymer({
