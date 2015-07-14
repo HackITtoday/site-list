@@ -30,7 +30,7 @@
   <template>
     <firebase-collection location="https://hi9site.firebaseio.com/cards/data/card" data="{{cards}}">
     </firebase-collection>
-    <paper-filter by="type" data="{{cards}}" output="{{output}}" max="1" ></paper-filter>
+    <paper-filter by="type" data="[[cards]]" output="{{output}}" max="1" ></paper-filter>
     <iron-list style="height:600px" items="[[output]]" id="cards">
       <template>
         <a href="[[item.url]]" title="[[item.value]]" >
