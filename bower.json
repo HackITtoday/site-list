@@ -1,0 +1,22 @@
+{
+  "name": "site-list",
+  "version": "0.0.0",
+  "homepage": "https://github.com/HackITtoday/site-list",
+  "authors": [
+    "Marcus Hitchins <marcus7777@gmail.com>"
+  ],
+  "dependencies": {
+    "paper-elements": "PolymerElements/paper-elements#1.0.1",
+    "firebase-element": "GoogleWebComponents/firebase-element#~1.0.1",
+    "iron-list": "PolymerElements/iron-list#~1.0.0"
+  },
+  "main": "site-list.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
