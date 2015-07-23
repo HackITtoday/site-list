@@ -2,22 +2,27 @@
 <link rel="import" href="../paper-filter/paper-filter.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../firebase-element/firebase-collection.html">
+<!-- <link rel="import" href="../iron-list/iron-list.html"> -->
 
 <dom-module id="site-list">
   <style>
     :host {
       display: block;
       text-align: center;
+      background-color: #eeeee0;
+       font-family: Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 300;
     }
     paper-button {
       background: #fff;
       min-width: 172px;
       margin: 0px 2px 6px;
+      font-family: Roboto, Helvetica, sans-serif;
     }
     paper-material {
       margin: 16px, 16px;
       height: 100px;
-      min-width:300px;
+      min-width:360px;
       margin:10px;
       display: inline-block;
     }
@@ -29,29 +34,71 @@
   <template>
     <firebase-collection location="https://hi9site.firebaseio.com/cards/data/card" data="{{cards}}">
     </firebase-collection>
-    <paper-filter by="type" data="{{cards}}" output="{{output}}" max="1" ></paper-filter>
-    <template is="dom-repeat" items="{{output}}" as="card" observe="cards" id="cards">
-      <a href="{{card.url}}" title="{{card.value}}" >
-        <paper-material>
-          <div class="body1" style="float: left;width:200px">
-            <h3>{{card.value}}</h3>
-            <span>{{card.title}}</span>
-          </div>
-          <iron-image sizing="contain" src="{{card.image}}" style="float: right;width:100px; height:100px; margin-right:5px; background-color: #FFFFFF;"></iron-image>
-        </paper-material>
-      </a>
+    <paper-filter by="type" data="[[cards]]" output="{{output}}" max="1" ></paper-filter>
+    <!--  <iron-list style="height:600px" items="[[output]]" id="cards">  -->
+    <template is="dom-repeat" items="[[output]]" id="cards">
+        <a href="[[item.url]]" title="[[item.value]]" >
+          <paper-material>
+            <div class="body1" style="float: left;width:250px">
+              <h3>[[item.value]]</h3>
+              <span>[[item.title]]</span>
+            </div>
+            <iron-image sizing="cover" src="[[item.image]]" style="float: right;width:100px; height:100px;"></iron-image>
+          </paper-material>
+        </a>
     </template>
+    <!-- </iron-list> -->
   </template>
 <script type="text/javascript">
  Polymer({
    is: 'site-list',    
     properties: {
-//      output: {
-//        type: Array
-//      },
-//      cards: {
-//        type: Array
-//      }
+      cards: {
+        type: Array,
+        value: [
+  {
+    "image" : "/images/card-images/Universal-Jobmatch-190x80.jpg",
+    "type" : "Jobs",
+    "url" : "https://jobsearch.direct.gov.uk/JobSearch/PowerSearch.aspx?redirect=http%3a%2f%2fjobsearch.direct.gov.uk%2fhome.aspx&pp=25&where=Penzance%2c%20Cornwall%2c%20England&sort=rv.dt.di&rad=20&rad_units=miles&re=134",
+    "value" : "Official DWP Job Search"
+  },
+  {
+    "image" : "/images/card-images/Amazon-Logo-Use-190x80.jpg",
+    "title" : "Online Shoping",
+    "type" : "Shopping",
+    "url" : "https://amazon.co.uk",
+    "value" : "Amazon Online Shopping"
+  },
+  {
+    "image" : "/images/card-images/CAB-Logo-190x80.jpg",
+    "title" : "CAB",
+    "type" : "Advice",
+    "url" : "http://www.citizensadvice.org.uk/",
+    "value" : "Citizens Advice"
+  },
+  {
+    "image" : "/images/card-images/Cornwall-Council-Logo1-190x80.jpg",
+    "title" : "Cornwall Council",
+    "type" : "Services",
+    "url" : "https://www.cornwall.gov.uk",
+    "value" : "Cornwall Council"
+  },
+  {
+    "image" : "/images/card-images/dch-logo.png",
+    "title" : "Devon & Cornwall Housing",
+    "type" : "Housing",
+    "url" : "http://www.dchgroup.com/",
+    "value" : "DCH"
+  },
+  {
+    "image" : "/images/card-images/ebay-Use-190x80.jpg",
+    "title" : "Online Shopping & Auctions",
+    "type" : "Shopping",
+    "url" : "http://www.ebay.co.uk/",
+    "value" : "Ebay"
+  }
+]
+      }
     },
     ready: function() {
       setInterval(function() {       
