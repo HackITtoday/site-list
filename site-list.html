@@ -23,13 +23,18 @@
       background: #fff;
       margin: 16px, 16px;
       height: 100px;
-      min-width:360px;
-      margin:10px;
+      margin:5px;
       display: inline-block;
     }
     a:link {
-      color:black;
+      color: black;
     }
+	h3 {
+		font-weight: 300;
+	}
+	paper-filter {
+		margin-top: 10px;
+	}
   </style>
 
   <template>
@@ -40,7 +45,7 @@
     <template is="dom-repeat" items="[[output]]" id="cards">
         <a href="[[item.url]]" title="[[item.value]]" >
           <paper-material>
-            <div class="body1" style="float: left;width:250px">
+            <div class="body1" style="float: left;width:200px">
               <h3>[[item.value]]</h3>
               <span>[[item.title]]</span>
             </div>
