@@ -60,9 +60,9 @@
  Polymer({
    is: 'site-list',    
     ready: function() {
-      setTimeout(function() {
+      window.setInterval(function() {
         document.querySelectorAll('html site-list')[0].$.cards.render();
-      },2000)
+      },3000)
     }
   });
 </script>
