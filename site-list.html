@@ -59,54 +59,10 @@
 <script type="text/javascript">
  Polymer({
    is: 'site-list',    
-    properties: {
-      cards: {
-        type: Array,
-        value: [
-  {
-    "image" : "/images/card-images/Universal-Jobmatch-190x80.jpg",
-    "type" : "Jobs",
-    "url" : "https://jobsearch.direct.gov.uk/JobSearch/PowerSearch.aspx?redirect=http%3a%2f%2fjobsearch.direct.gov.uk%2fhome.aspx&pp=25&where=Penzance%2c%20Cornwall%2c%20England&sort=rv.dt.di&rad=20&rad_units=miles&re=134",
-    "value" : "Official DWP Job Search"
-  },
-  {
-    "image" : "/images/card-images/Amazon-Logo-Use-190x80.jpg",
-    "title" : "Online Shoping",
-    "type" : "Shopping",
-    "url" : "https://amazon.co.uk",
-    "value" : "Amazon Online Shopping"
-  },
-  {
-    "image" : "/images/card-images/CAB-Logo-190x80.jpg",
-    "title" : "CAB",
-    "type" : "Advice",
-    "url" : "http://www.citizensadvice.org.uk/",
-    "value" : "Citizens Advice"
-  },
-  {
-    "image" : "/images/card-images/Cornwall-Council-Logo1-190x80.jpg",
-    "title" : "Cornwall Council",
-    "type" : "Services",
-    "url" : "https://www.cornwall.gov.uk",
-    "value" : "Cornwall Council"
-  },
-  {
-    "image" : "/images/card-images/dch-logo.png",
-    "title" : "Devon & Cornwall Housing",
-    "type" : "Housing",
-    "url" : "http://www.dchgroup.com/",
-    "value" : "DCH"
-  },
-  {
-    "image" : "/images/card-images/ebay-Use-190x80.jpg",
-    "title" : "Online Shopping & Auctions",
-    "type" : "Shopping",
-    "url" : "http://www.ebay.co.uk/",
-    "value" : "Ebay"
-  }
-]
-      }
-    }
+    ready: function() {
+      setTimeout(function() {
+        document.querySelectorAll('html site-list')[0].$.cards.render();
+      },2000)
   });
 </script>
 </dom-module>
