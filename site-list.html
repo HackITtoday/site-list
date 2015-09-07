@@ -2,7 +2,7 @@
 <link rel="import" href="../paper-filter/paper-filter.html">
 <link rel="import" href="../iron-image/iron-image.html">
 <link rel="import" href="../firebase-element/firebase-collection.html">
-<!-- <link rel="import" href="../iron-list/iron-list.html"> -->
+<link rel="import" href="../sortable-list/sortable-list.html"> 
 
 <dom-module id="site-list">
 	<style>
@@ -53,7 +53,7 @@
 		<firebase-collection location="https://hi9site.firebaseio.com/cards/data/card" data="{{cards}}">
 		</firebase-collection>
 		<paper-filter by="type" data="[[cards]]" output="{{output}}"></paper-filter>
-		<!--  <iron-list style="height:600px" items="[[output]]" id="cards">  -->
+		<sortable-list>
 		<template is="dom-repeat" items="[[output]]" id="cards">
 			<a href="[[item.url]]" title="[[item.value]]">
 				<paper-material>
@@ -68,7 +68,7 @@
 				</paper-material>
 			</a>
 		</template>
-		<!-- </iron-list> -->
+		</sortable-list>
 	</template>
 	<script type="text/javascript">
 		Polymer({
